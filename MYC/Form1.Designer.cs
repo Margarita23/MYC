@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.weightBox = new System.Windows.Forms.TextBox();
@@ -38,15 +39,24 @@
             this.labelHeight = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gender = new System.Windows.Forms.GroupBox();
-            this.genderFemale = new System.Windows.Forms.RadioButton();
             this.genderMale = new System.Windows.Forms.RadioButton();
+            this.genderFemale = new System.Windows.Forms.RadioButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.label2 = new System.Windows.Forms.Label();
             this.gender.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(154, 219);
             this.button1.Name = "button1";
+            this.helpProvider1.SetShowHelp(this.button1, true);
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "расчитать";
@@ -124,17 +134,6 @@
             this.gender.TabStop = false;
             this.gender.Text = "Пол";
             // 
-            // genderFemale
-            // 
-            this.genderFemale.AutoSize = true;
-            this.genderFemale.Location = new System.Drawing.Point(6, 37);
-            this.genderFemale.Name = "genderFemale";
-            this.genderFemale.Size = new System.Drawing.Size(75, 17);
-            this.genderFemale.TabIndex = 13;
-            this.genderFemale.Text = "Женщина";
-            this.genderFemale.UseVisualStyleBackColor = true;
-            this.genderFemale.CheckedChanged += new System.EventHandler(this.genderFemale_CheckedChanged);
-            // 
             // genderMale
             // 
             this.genderMale.AutoSize = true;
@@ -148,11 +147,54 @@
             this.genderMale.UseVisualStyleBackColor = true;
             this.genderMale.CheckedChanged += new System.EventHandler(this.genderMale_CheckedChanged);
             // 
+            // genderFemale
+            // 
+            this.genderFemale.AutoSize = true;
+            this.genderFemale.Location = new System.Drawing.Point(6, 37);
+            this.genderFemale.Name = "genderFemale";
+            this.genderFemale.Size = new System.Drawing.Size(75, 17);
+            this.genderFemale.TabIndex = 13;
+            this.genderFemale.Text = "Женщина";
+            this.genderFemale.UseVisualStyleBackColor = true;
+            this.genderFemale.CheckedChanged += new System.EventHandler(this.genderFemale_CheckedChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkRate = 0;
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.BlinkRate = 0;
+            this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.BlinkRate = 0;
+            this.errorProvider3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Рома\\source\\repos\\MYC\\help.html";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(331, 265);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Справка - F1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 287);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.gender);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelHeight);
@@ -162,12 +204,18 @@
             this.Controls.Add(this.ageBox);
             this.Controls.Add(this.weightBox);
             this.Controls.Add(this.button1);
+            this.HelpButton = true;
+            this.helpProvider1.SetHelpString(this, "");
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "MYCalories";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gender.ResumeLayout(false);
             this.gender.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,6 +234,11 @@
         private System.Windows.Forms.GroupBox gender;
         private System.Windows.Forms.RadioButton genderFemale;
         private System.Windows.Forms.RadioButton genderMale;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
